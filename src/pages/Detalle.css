@@ -1,0 +1,10 @@
+.title-container{
+    display: flex;
+    justify-content: center;
+}
+
+.side{
+    width: 100%;
+    min-height: 200px;
+    background-color: rgba(104, 112, 176, 0.3);
+}
