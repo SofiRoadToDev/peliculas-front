@@ -1,24 +1,24 @@
 
 import './App.css';
-import Header from './components/Header/Header';
-import FilmCard from './components/Film-Card/FilmCard';
+
 import './components/Header/Header.css'
-import Container  from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import  Layout from './pages/Layout'
 import Detalle from './pages/Detalle'
+import Home from './pages/Home'
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 function App() {
   return (
     <>
-        <Header/>
-       <Container fluid className='bg-dark pt-3'>
-          <Row style={{ justifyContent: "between"  }}>
-          <FilmCard/>
-          <FilmCard/>
-          <FilmCard/>                 
-          </Row>
-          <Detalle/>
-      </Container>
+       <BrowserRouter>
+       {/**Ver que el Route con el Layout tiene a las demás rutas como children */}
+          <Routes>
+            <Route path="/" element={<Layout/>}>
+              <Route path="" element={<Home/>}/>
+              <Route path="/peliculas/:id" element={<Detalle/>}/>
+            </Route>
+          </Routes>
+       </BrowserRouter>
       
       
     
