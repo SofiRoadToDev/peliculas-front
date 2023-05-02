@@ -6,11 +6,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Accordion from 'react-bootstrap/Accordion';
 import Figure from 'react-bootstrap/Figure';
 import './Detalle.css'
+import {useParams} from 'react-router-dom';
 
 
 const Detalle = () => {
+
+    const {id}=useParams();
+
   return (
     <Container>
+        <h3>El id recibido es {id}</h3>
         <Row className="text-center mb-4 text-light">
             <h2>El gato con botas</h2>
         </Row>
